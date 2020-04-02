@@ -39,6 +39,8 @@ public abstract class LifeForm {
 			alive=false;
 	}
 	
+	public abstract void move();
+	
 	// to be alive you have to be able to reproduce....
 	public abstract void reproduce();
 	

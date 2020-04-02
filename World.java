@@ -18,11 +18,18 @@ public class World {
 		makeNewCreatures();
 		//eatThings();
 		//creaturesGetOlder();
-		//purgeTheDead();		
+		//purgeTheDead();
+		//moveCreatures();
 	}
 	
-	public void makeNewCreatures() {
+	public void moveCreatures(){
+		for( LifeForm l:creatureList){
+			l.move();
+		}
+	}
 		
+	
+	public void makeNewCreatures() {
 		int currentSizeOfCreatureList = creatureList.size();
 		System.out.println("size of list is "+currentSizeOfCreatureList);
 		for(int i=0; i< currentSizeOfCreatureList; i++) {
