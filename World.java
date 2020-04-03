@@ -20,7 +20,7 @@ public class World {
 		//creaturesGetOlder();
 		//purgeTheDead();
 		//moveCreatures();
-	}
+	} 
 	
 	public void moveCreatures(){
 		for( LifeForm l:creatureList){
@@ -51,6 +51,13 @@ public class World {
 		for( LifeForm l:creatureList){
 			l.age(1);
 		}
+	}
+	
+	public boolean isOccupied(Location l){
+		for( LifeForm f:creatureList){
+			if(f.getMyLocation().equals(l)) return true;
+		}
+		return false;
 	}
 	
 	public int getWidth() {

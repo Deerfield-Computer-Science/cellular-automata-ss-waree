@@ -1,0 +1,31 @@
+In what class does the program execution start.  How many "years"  (iterations) pass in this world?  How can you change the amount of time that elapses? 
+World controller, 3, modify the number of years put in the creatures get older method.
+
+Describe the flow of execution of the program, where does it start?  
+Setting up the world and letting it run. 
+Where does it go next? Letting creatures live their lives for a certain amount of time specified by creatures get older. 
+Where does it end? After the specified amount of iterations in runWorld. 
+
+How would you change the color of the grass? 
+Just override it in the constructor of grass. myColor = Color.xxx
+
+Describe how grass reproduces. 
+Randomly placed at new location (the starter code). But I would like grass to spread to adjacent locations.
+
+How could you make sure the grass does not reproduce a new grass plant on top of an existing grass? 
+Set an if condition to redo the reproduction if that happens. (I have a isOccupied method to determine if there is something else in that location.)
+
+How are the creatures stored and manipulated? 
+In the arraylist of LifeForms named creatureList
+
+What is the point of the method purgeTheDead()? 
+To remove dead things from the arraylist so they don’t interfere.
+
+Do the creatures have a location, or do locations have a creature? 
+Creatures have a location.
+
+Does the world have creatures or do the creatures have a world?  Why is this necessary? 
+Creatures have a world. (Still thinking about the latter part)
+
+How would you make a creature move?  Describe what methods you would add and where you would put them? 
+Abstract method in each animal's class because each creature moves differently.

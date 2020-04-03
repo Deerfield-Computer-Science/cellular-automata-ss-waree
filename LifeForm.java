@@ -27,6 +27,7 @@ public abstract class LifeForm {
 		alive = true;
 	}
 	
+	
 	/* all the basic lifeform functions
 	 * 		getOlder
 	 * 		reproduce
