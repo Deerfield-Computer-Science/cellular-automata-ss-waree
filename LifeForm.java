@@ -9,14 +9,18 @@ public abstract class LifeForm {
 	protected Color myColor;
 	protected int myAge;
 	protected boolean alive;
+	protected int myDiet;
+	protected int mySpecies;
 	
 	// lifeform constructors
-	public LifeForm(int myLifeSpan, Location myLocation, Color myColor, World myWorld) {
+	public LifeForm(int myLifeSpan, Location myLocation, Color myColor, World myWorld, int myDiet, int mySpecies) {
 		super();
 		this.myLifeSpan = myLifeSpan;
 		this.myLocation = myLocation;
 		this.myColor = myColor;
 		this.myWorld = myWorld;
+		this.myDiet = myDiet;
+		this.mySpecies = mySpecies;
 		alive = true;
 	}
 	
@@ -42,14 +46,37 @@ public abstract class LifeForm {
 	
 	public abstract void move();
 	
+	public abstract void eat();
+	
 	// to be alive you have to be able to reproduce....
-	public abstract void reproduce();
+	public abstract void reproduce(int currentSizeOfCreatureList);
 	
 	public boolean isDead(){
 		return !alive;
 	}
 	
 	// getter and setters (aka accessors and mutators)
+	
+	public int getMySpecies(){
+		return mySpecies;
+	}
+	
+	public void setMySpecies(int mySpecies){
+		this.mySpecies = mySpecies;
+	}
+	
+	public void setDead(){
+		this.alive=false;
+	}
+	
+	public int getMyDiet(){
+		return myDiet;
+	}
+	
+	public void setMyDiet(int myDiet){
+		this.myDiet = myDiet;
+	}
+	
 	public int getMyLifeSpan() {
 		return myLifeSpan;
 	}

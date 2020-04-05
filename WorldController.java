@@ -3,6 +3,7 @@ import java.awt.Color;
 import acm.graphics.*;
 import acm.program.*;
 import acm.util.*;
+import java.awt.event.*;
 
 public class WorldController extends GraphicsProgram {
 	
@@ -24,14 +25,21 @@ public class WorldController extends GraphicsProgram {
 		theWorld = new World(20,20);
 		theWorld.getCreatureList().add( new Grass( new Location(3,6), theWorld ));
 		theWorld.getCreatureList().add( new Grass( new Location(4,6), theWorld ));
+		theWorld.getCreatureList().add( new Grass( new Location(10,8), theWorld ));
+		theWorld.getCreatureList().add( new Grass( new Location(5,17), theWorld ));
+		theWorld.getCreatureList().add( new Grass( new Location(18,14), theWorld ));
+		theWorld.getCreatureList().add( new Grass( new Location(4,4), theWorld ));
+		theWorld.getCreatureList().add( new Cow( new Location(3,5), theWorld ));
+		theWorld.getCreatureList().add( new Cow( new Location(19,13), theWorld ));
 		theWorldCanvas = this.getGCanvas();
 	}
 	
 	public void runWorld(){
 		drawWorld();
-		for(int i=0; i<3;i++){
+		for(int i=0; i<5;i++){
 			theWorld.letTimePass();
-			pause(500);
+			waitForClick();
+			//pause(500);
 			drawWorld();
 		}
 	}	
